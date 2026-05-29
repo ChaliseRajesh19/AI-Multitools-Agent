@@ -1,0 +1,5 @@
+# Python dependencies for the multitools agent.
+groq
+python-dotenv
+ddgs
+requests
