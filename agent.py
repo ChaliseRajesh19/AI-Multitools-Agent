@@ -34,7 +34,13 @@ def execute_tool(tool_name, tool_args):
 	return f"Unknown tool: {tool_name}"
 
 
+def trim_history(history):
+    if len(history) > MAX_HISTORY:
+        return [history[0]] + history[-(MAX_HISTORY - 1) :]
+    return history
+
 def run_agent(user_input, conversation_history, on_stream=None):
+	conversation_history = trim_history(conversation_history)
 	conversation_history.append({"role": "user", "content": user_input})
 	try:
 		response = client.chat.completions.create(

@@ -12,7 +12,7 @@ STRICT RULES:
 - NEVER answer factual questions from memory, always search first
 """
 
-MAX_HISTORY = None
+MAX_HISTORY = 20
 
 TOOLS = [
 	{
